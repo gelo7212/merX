@@ -1,0 +1,16 @@
+# Enhanced Search Accuracy Dependencies
+# These packages improve search precision and recall significantly
+
+# Fuzzy string matching for better recall
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.21.1  # Speeds up fuzzywuzzy
+
+# Natural language processing for better term processing  
+nltk==3.8.1
+
+# Optional: Semantic similarity (for future enhancement)
+# sentence-transformers==2.2.2
+# torch>=1.9.0
+
+# Performance monitoring
+numpy>=1.21.0

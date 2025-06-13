@@ -3,3 +3,13 @@ python-dateutil>=2.8.0
 structlog>=23.1.0
 dependency-injector>=4.41.0
 typing-extensions>=4.7.0
+portalocker>=2.7.0  # For cross-platform file locking
+
+# Visualization and Testing Dependencies
+matplotlib>=3.7.0
+networkx>=3.1
+numpy>=1.24.0
+plotly>=5.15.0
+streamlit>=1.25.0
+pandas>=2.0.0
+scipy>=1.10.0

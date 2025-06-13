@@ -4,6 +4,7 @@ Implements the custom binary format specification.
 """
 
 import struct
+import io
 from typing import BinaryIO
 from uuid import UUID
 from datetime import datetime
@@ -38,6 +39,13 @@ class MemorySerializer(IMemorySerializer):
     HEADER_MARKER = b'MEX0'
     ENCODING = 'utf-8'
     
+    def serialize_to_bytes(self, node: MemoryNode) -> bytes:
+        """Serialize a node to bytes without writing to a file."""
+        import io
+        buffer = io.BytesIO()
+        self.write_node(buffer, node)
+        return buffer.getvalue()
+    
     def write_node(self, file: BinaryIO, node: MemoryNode) -> int:
         """Write a memory node to binary file."""
         start_pos = file.tell()
@@ -68,10 +76,10 @@ class MemorySerializer(IMemorySerializer):
             content_bytes = node.content.encode(self.ENCODING)
             file.write(struct.pack('<I', len(content_bytes)))
             file.write(content_bytes)
-            
-            # Links
-            file.write(struct.pack('<H', len(node.links)))
-            for link in node.links:
+              # Links
+            links = node.links if node.links is not None else []
+            file.write(struct.pack('<H', len(links)))
+            for link in links:
                 link_uuid_bytes = str(link.to_id).encode(self.ENCODING)
                 file.write(link_uuid_bytes)
                 file.write(struct.pack('<f', link.weight))
@@ -93,8 +101,9 @@ class MemorySerializer(IMemorySerializer):
                 file.write(struct.pack('<B', 0))  # No version_of
             
             # Tags
-            file.write(struct.pack('<B', len(node.tags)))
-            for tag in node.tags:
+            tags = node.tags if node.tags is not None else []
+            file.write(struct.pack('<B', len(tags)))
+            for tag in tags:
                 tag_bytes = tag.encode(self.ENCODING)
                 file.write(struct.pack('<B', len(tag_bytes)))
                 file.write(tag_bytes)
@@ -205,10 +214,10 @@ class MemorySerializer(IMemorySerializer):
         
         # Content (length + content)
         size += 4 + len(node.content.encode(self.ENCODING))
-        
-        # Links (count + links)
+          # Links (count + links)
         size += 2  # link count
-        for link in node.links:
+        links = node.links if node.links is not None else []
+        for link in links:
             size += 36 + 4  # UUID + weight
             size += 1 + len(link.link_type.encode(self.ENCODING))  # link type
         
@@ -222,7 +231,8 @@ class MemorySerializer(IMemorySerializer):
         
         # Tags (count + tags)
         size += 1  # tag count
-        for tag in node.tags:
+        tags = node.tags if node.tags is not None else []
+        for tag in tags:
             size += 1 + len(tag.encode(self.ENCODING))
         
         return size

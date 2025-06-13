@@ -30,8 +30,8 @@ class MemoryNode:
     activation: float
     decay_rate: float
     version_of: Optional[UUID] = None
-    links: List[MemoryLink] = None
-    tags: List[str] = None
+    links: Optional[List[MemoryLink]] = None
+    tags: Optional[List[str]] = None
 
     def __post_init__(self):
         if self.links is None:
@@ -85,6 +85,14 @@ class IMemoryStorage(Protocol):
 
     def read_node_by_id(self, node_id: UUID) -> Optional[MemoryNode]:
         """Read a node by its UUID."""
+        ...
+
+    def get_node(self, node_id: UUID) -> Optional[MemoryNode]:
+        """Get a node by its UUID (alias for read_node_by_id)."""
+        ...
+
+    def update_node(self, node: MemoryNode) -> bool:
+        """Update an existing node. Returns True if successful."""
         ...
 
     def get_all_nodes(self) -> List[MemoryNode]:
@@ -179,14 +187,13 @@ class IVersionManager(Protocol):
 
 
 class IMemoryEngine(Protocol):
-    """Main interface for the memory engine - orchestrates all operations."""
-
+    """Main interface for the memory engine - orchestrates all operations."""    
     def insert_memory(
         self,
         content: str,
         node_type: str = "fact",
-        tags: List[str] = None,
-        related_ids: List[UUID] = None,
+        tags: Optional[List[str]] = None,
+        related_ids: Optional[List[UUID]] = None,
         version_of: Optional[UUID] = None,
     ) -> UUID:
         """Insert a new memory node."""
@@ -198,18 +205,33 @@ class IMemoryEngine(Protocol):
 
     def update_memory_activation(self, node_id: UUID, boost: float = 0.1) -> None:
         """Update activation when memory is accessed."""
-        ...
-
+        ...    
+    
     def recall_memories(
-        self, query: str = None, tags: List[str] = None, limit: int = 10
+        self, 
+        query: Optional[str] = None, 
+        tags: Optional[List[str]] = None, 
+        limit: int = 10
     ) -> List[MemoryNode]:
         """Recall memories based on query and/or tags."""
         ...
 
     def apply_global_decay(self) -> int:
         """Apply decay to all memories. Returns number of nodes processed."""
-        ...
-
+        ...    
+    
     def get_memory_stats(self) -> Dict[str, Any]:
         """Get statistics about the memory system."""
+        ...
+
+    def find_related_memories(
+        self, node_id: UUID, max_depth: int = 2
+    ) -> List[MemoryNode]:
+        """Find memories related through links and spreading activation."""
+        ...
+
+    def link_memories(
+        self, from_id: UUID, to_id: UUID, weight: float = 0.5, link_type: str = "cross_domain"
+    ) -> bool:
+        """Create a link between two memories."""
         ...

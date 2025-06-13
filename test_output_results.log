@@ -1,0 +1,545 @@
+2025-06-14 01:51:16,895 - __main__ - INFO - ================================================================================
+2025-06-14 01:51:16,895 - __main__ - INFO - STARTING EXTREME PERFORMANCE TEST
+2025-06-14 01:51:16,895 - __main__ - INFO - ================================================================================
+2025-06-14 01:51:16,934 - __main__ - INFO - System: 12 CPU cores, 81870.14 MB RAM
+2025-06-14 01:51:16,934 - __main__ - INFO - Creating enhanced memory engine...
+2025-06-14 01:51:16,938 - src.core.ramx - INFO - Initialized RAMX with capacity 20000
+2025-06-14 01:51:16,938 - src.core.index_manager - INFO - Initialized enhanced index manager
+2025-06-14 01:51:16,965 - src.core.index_manager - INFO - Loaded index with 10000 entries from data/test_output/hp_mini.mexmap
+2025-06-14 01:51:16,966 - src.core.memory_io_orchestrator - INFO - Loading 10000 nodes from disk into RAM...
+2025-06-14 01:51:17,513 - src.core.memory_io_orchestrator - INFO - Loaded 10000 nodes into RAM
+2025-06-14 01:51:17,513 - src.core.memory_io_orchestrator - INFO - Initialized Memory I/O Orchestrator with paths: data/test_output/hp_mini.mex, data/test_output/hp_mini.mexmap
+2025-06-14 01:51:17,513 - src.core.decay_processor - INFO - Initialized decay processor with exponential model
+2025-06-14 01:51:17,513 - src.core.memory_linker - INFO - Initialized memory linker
+2025-06-14 01:51:17,515 - src.engine.recall_engine - INFO - Ultimate Enhanced Recall Engine initialized with all advanced features
+2025-06-14 01:51:17,516 - src.engine.version_manager - INFO - Initialized version manager
+2025-06-14 01:51:17,516 - src.engine.memory_engine - INFO - Initialized memory engine
+2025-06-14 01:51:17,516 - __main__ - INFO - Generating 10,000 test nodes across 10 domains (ULTRA performance mode)...
+2025-06-14 01:51:17,516 - __main__ - INFO - Found orchestrator directly: MemoryIOOrchestrator
+2025-06-14 01:51:17,516 - __main__ - INFO - Ultra-performance background writer thread started
+2025-06-14 01:51:17,517 - __main__ - INFO - Using 8 parallel generation workers
+2025-06-14 01:51:17,517 - __main__ - INFO - ULTRA Worker 0: Generating nodes 0 to 1249
+2025-06-14 01:51:17,534 - __main__ - INFO - ULTRA Worker 1: Generating nodes 1250 to 2499
+2025-06-14 01:51:17,641 - __main__ - INFO - ULTRA Worker 2: Generating nodes 2500 to 3749
+2025-06-14 01:51:17,703 - __main__ - INFO - ULTRA Worker 3: Generating nodes 3750 to 4999
+2025-06-14 01:51:17,734 - __main__ - INFO - ULTRA Worker 4: Generating nodes 5000 to 6249
+2025-06-14 01:51:17,766 - __main__ - INFO - ULTRA Worker 5: Generating nodes 6250 to 7499
+2025-06-14 01:51:17,766 - __main__ - INFO - ULTRA Worker 6: Generating nodes 7500 to 8749
+2025-06-14 01:51:17,767 - __main__ - INFO - ULTRA Worker 7: Generating nodes 8750 to 9999
+2025-06-14 01:51:18,651 - __main__ - INFO - All node generation workers completed, generated 10000 nodes
+2025-06-14 01:51:18,651 - __main__ - INFO - Waiting for background writer to complete (0 batches pending)...
+2025-06-14 01:51:18,974 - src.core.index_manager - INFO - Saved index with 20000 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:51:18,974 - src.core.index_manager - INFO - Flushed 10000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:51:18,974 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 10000 nodes (16 batches) in 0.21s (47553.39 nodes/sec)
+2025-06-14 01:51:18,980 - __main__ - INFO - Ultra-performance background writer finished (processed 16 batches)
+2025-06-14 01:51:18,982 - __main__ - INFO - Successfully inserted 10,000 nodes (ULTRA-performance mode)
+2025-06-14 01:51:18,982 - __main__ - INFO - Total insertion time: 1.47s
+2025-06-14 01:51:18,983 - __main__ - INFO - Testing retrieval performance with 1000 random nodes...
+2025-06-14 01:51:19,002 - __main__ - INFO - Retrieved 1000/1000 nodes (100.00%) in 0.02s
+2025-06-14 01:51:19,003 - __main__ - INFO - Retrieval performance: 53913.44 nodes/second
+2025-06-14 01:51:19,003 - __main__ - INFO - Testing content-based recall with 50 queries...
+2025-06-14 01:51:24,381 - __main__ - INFO - Query: 'reinforcement learning' - found 0 results in 5377.13ms
+2025-06-14 01:51:24,382 - __main__ - INFO - Query: 'evolutionary theory' - found 0 results in 0.00ms
+2025-06-14 01:51:24,403 - __main__ - INFO - Query: 'psychology cognitive behavioral' - found 10 results in 21.04ms
+2025-06-14 01:51:24,404 - __main__ - INFO - Query: 'string theory' - found 0 results in 0.00ms
+2025-06-14 01:51:24,404 - __main__ - INFO - Query: 'procedural motor skills' - found 0 results in 0.51ms
+2025-06-14 01:51:24,404 - __main__ - INFO - Query: 'neural networks' - found 0 results in 0.00ms
+2025-06-14 01:51:24,404 - __main__ - INFO - Query: 'artificial intelligence machine learning' - found 0 results in 0.00ms
+2025-06-14 01:51:24,404 - __main__ - INFO - Query: 'narrative structure' - found 0 results in 0.00ms
+2025-06-14 01:51:24,405 - __main__ - INFO - Query: 'existentialism' - found 0 results in 0.00ms
+2025-06-14 01:51:24,405 - __main__ - INFO - Query: 'episodic personal experience' - found 0 results in 0.00ms
+2025-06-14 01:51:24,405 - __main__ - INFO - Query: 'behaviorism' - found 0 results in 0.00ms
+2025-06-14 01:51:24,405 - __main__ - INFO - Query: 'thermodynamics' - found 0 results in 0.00ms
+2025-06-14 01:51:24,405 - __main__ - INFO - Query: 'working memory processing' - found 0 results in 0.00ms
+2025-06-14 01:51:24,405 - __main__ - INFO - Query: 'graph theory' - found 0 results in 0.00ms
+2025-06-14 01:51:24,437 - __main__ - INFO - Query: 'chemistry organic compounds' - found 10 results in 29.94ms
+2025-06-14 01:51:24,609 - __main__ - INFO - Query: 'cellular biology compiler design' - found 10 results in 172.44ms
+2025-06-14 01:51:24,610 - __main__ - INFO - Query: 'working memory processing string theory' - found 0 results in 1.00ms
+2025-06-14 01:51:24,610 - __main__ - INFO - Query: 'number theory' - found 0 results in 0.00ms
+2025-06-14 01:51:24,631 - __main__ - INFO - Query: 'history ancient civilizations' - found 10 results in 20.64ms
+2025-06-14 01:51:24,632 - __main__ - INFO - Query: 'gene expression' - found 0 results in 0.00ms
+2025-06-14 01:51:24,632 - __main__ - INFO - Query: 'working memory temporary' - found 0 results in 0.00ms
+2025-06-14 01:51:24,632 - __main__ - INFO - Query: 'poetry analysis' - found 0 results in 0.00ms
+2025-06-14 01:51:24,658 - __main__ - INFO - Query: 'philosophy ethics morality' - found 10 results in 26.50ms
+2025-06-14 01:51:24,658 - __main__ - INFO - Query: 'calculus' - found 0 results in 0.00ms
+2025-06-14 01:51:24,659 - __main__ - INFO - Query: 'compiler design' - found 0 results in 0.00ms
+2025-06-14 01:51:24,659 - __main__ - INFO - Query: 'relativity' - found 0 results in 0.00ms
+2025-06-14 01:51:24,659 - __main__ - INFO - Query: 'biochemistry' - found 0 results in 0.00ms
+2025-06-14 01:51:24,660 - __main__ - INFO - Query: 'polymer science' - found 0 results in 1.00ms
+2025-06-14 01:51:24,682 - __main__ - INFO - Query: 'developmental psychology' - found 10 results in 21.58ms
+2025-06-14 01:51:24,682 - __main__ - INFO - Query: 'deep learning' - found 0 results in 0.00ms
+2025-06-14 01:51:24,683 - __main__ - INFO - Query: 'linear algebra' - found 0 results in 0.00ms
+2025-06-14 01:51:24,709 - __main__ - INFO - Query: 'physics quantum mechanics' - found 10 results in 25.73ms
+2025-06-14 01:51:24,709 - __main__ - INFO - Query: 'literary criticism' - found 0 results in 0.00ms
+2025-06-14 01:51:24,733 - __main__ - INFO - Query: 'mathematics probability statistics' - found 10 results in 24.09ms
+2025-06-14 01:51:24,733 - __main__ - INFO - Query: 'procedural skills automation' - found 0 results in 0.00ms
+2025-06-14 01:51:24,746 - __main__ - INFO - Query: 'quantum field theory' - found 10 results in 13.10ms
+2025-06-14 01:51:24,747 - __main__ - INFO - Query: 'computer science algorithms data structures' - found 0 results in 1.00ms
+2025-06-14 01:51:24,757 - __main__ - INFO - Query: 'world war' - found 10 results in 10.26ms
+2025-06-14 01:51:24,784 - __main__ - INFO - Query: 'literature analysis interpretation' - found 10 results in 27.11ms
+2025-06-14 01:51:24,990 - __main__ - INFO - Query: 'semantic knowledge facts' - found 10 results in 205.29ms
+2025-06-14 01:51:25,011 - __main__ - INFO - Query: 'cellular biology' - found 10 results in 21.66ms
+2025-06-14 01:51:25,033 - __main__ - INFO - Query: 'biology genetics dna' - found 10 results in 21.65ms
+2025-06-14 01:51:25,033 - __main__ - INFO - Query: 'neuroscience' - found 0 results in 0.00ms
+2025-06-14 01:51:25,034 - __main__ - INFO - Query: 'episodic autobiographical' - found 0 results in 0.00ms
+2025-06-14 01:51:25,034 - __main__ - INFO - Query: 'renaissance' - found 0 results in 0.00ms
+2025-06-14 01:51:25,034 - __main__ - INFO - Query: 'semantic conceptual framework' - found 0 results in 0.00ms
+2025-06-14 01:51:25,035 - __main__ - INFO - Query: 'industrial revolution' - found 0 results in 0.00ms
+2025-06-14 01:51:25,035 - __main__ - INFO - Query: 'metaphysics' - found 0 results in 0.00ms
+2025-06-14 01:51:25,035 - __main__ - INFO - Query: 'complexity analysis' - found 0 results in 0.00ms
+2025-06-14 01:51:25,035 - __main__ - INFO - Query: 'epistemology' - found 0 results in 0.00ms
+2025-06-14 01:51:25,035 - __main__ - INFO - Content recall: average 2.80 results per query
+2025-06-14 01:51:25,035 - __main__ - INFO - Testing tag-based recall with 50 queries...
+2025-06-14 01:51:25,418 - __main__ - INFO - Tags: ['chemistry', 'important'] - found 10 results in 381.61ms
+2025-06-14 01:51:25,628 - __main__ - INFO - Tags: ['philosophy', 'theoretical'] - found 10 results in 209.72ms
+2025-06-14 01:51:25,702 - __main__ - INFO - Tags: ['computer_science', 'research'] - found 10 results in 72.50ms
+2025-06-14 01:51:25,911 - __main__ - INFO - Tags: ['history', 'experimental'] - found 10 results in 209.49ms
+2025-06-14 01:51:25,984 - __main__ - INFO - Tags: ['mathematics', 'research'] - found 10 results in 72.91ms
+2025-06-14 01:51:26,193 - __main__ - INFO - Tags: ['biology', 'important'] - found 10 results in 208.73ms
+2025-06-14 01:51:26,259 - __main__ - INFO - Tags: ['history', 'theoretical'] - found 10 results in 66.26ms
+2025-06-14 01:51:26,457 - __main__ - INFO - Tags: ['artificial_intelligence', 'research'] - found 10 results in 197.18ms
+2025-06-14 01:51:26,473 - __main__ - INFO - Tags: ['mathematics'] - found 10 results in 16.53ms
+2025-06-14 01:51:26,695 - __main__ - INFO - Tags: ['history', 'core'] - found 10 results in 221.25ms
+2025-06-14 01:51:26,711 - __main__ - INFO - Tags: ['physics'] - found 10 results in 16.01ms
+2025-06-14 01:51:26,789 - __main__ - INFO - Tags: ['chemistry', 'core'] - found 10 results in 78.03ms
+2025-06-14 01:51:27,025 - __main__ - INFO - Tags: ['philosophy', 'research'] - found 10 results in 235.80ms
+2025-06-14 01:51:27,104 - __main__ - INFO - Tags: ['literature', 'research'] - found 10 results in 78.95ms
+2025-06-14 01:51:27,342 - __main__ - INFO - Tags: ['literature', 'core'] - found 10 results in 236.32ms
+2025-06-14 01:51:27,414 - __main__ - INFO - Tags: ['mathematics', 'theoretical'] - found 10 results in 71.24ms
+2025-06-14 01:51:27,644 - __main__ - INFO - Tags: ['biology', 'research'] - found 10 results in 230.04ms
+2025-06-14 01:51:27,663 - __main__ - INFO - Tags: ['biology'] - found 10 results in 19.02ms
+2025-06-14 01:51:27,744 - __main__ - INFO - Tags: ['chemistry', 'applied'] - found 10 results in 80.65ms
+2025-06-14 01:51:27,921 - __main__ - INFO - Tags: ['literature'] - found 10 results in 175.84ms
+2025-06-14 01:51:28,004 - __main__ - INFO - Tags: ['chemistry', 'review'] - found 10 results in 83.19ms
+2025-06-14 01:51:28,262 - __main__ - INFO - Tags: ['philosophy', 'core'] - found 10 results in 257.95ms
+2025-06-14 01:51:28,402 - __main__ - INFO - Tags: ['philosophy', 'important'] - found 10 results in 140.12ms
+2025-06-14 01:51:28,665 - __main__ - INFO - Tags: ['psychology', 'review'] - found 10 results in 263.05ms
+2025-06-14 01:51:28,759 - __main__ - INFO - Tags: ['biology', 'theoretical'] - found 10 results in 93.71ms
+2025-06-14 01:51:29,005 - __main__ - INFO - Tags: ['artificial_intelligence', 'review'] - found 10 results in 246.50ms
+2025-06-14 01:51:29,082 - __main__ - INFO - Tags: ['computer_science', 'theoretical'] - found 10 results in 76.72ms
+2025-06-14 01:51:29,311 - __main__ - INFO - Tags: ['biology', 'review'] - found 10 results in 228.94ms
+2025-06-14 01:51:29,387 - __main__ - INFO - Tags: ['biology', 'core'] - found 10 results in 76.44ms
+2025-06-14 01:51:29,626 - __main__ - INFO - Tags: ['history', 'review'] - found 10 results in 238.38ms
+2025-06-14 01:51:29,706 - __main__ - INFO - Tags: ['history', 'important'] - found 10 results in 79.55ms
+2025-06-14 01:51:29,777 - __main__ - INFO - Tags: ['physics', 'theoretical'] - found 10 results in 70.38ms
+2025-06-14 01:51:29,990 - __main__ - INFO - Tags: ['psychology', 'core'] - found 10 results in 213.23ms
+2025-06-14 01:51:30,073 - __main__ - INFO - Tags: ['mathematics', 'important'] - found 10 results in 82.19ms
+2025-06-14 01:51:30,301 - __main__ - INFO - Tags: ['chemistry', 'theoretical'] - found 10 results in 227.45ms
+2025-06-14 01:51:30,530 - __main__ - INFO - Tags: ['literature', 'theoretical'] - found 10 results in 229.61ms
+2025-06-14 01:51:30,604 - __main__ - INFO - Tags: ['philosophy', 'experimental'] - found 10 results in 73.95ms
+2025-06-14 01:51:30,837 - __main__ - INFO - Tags: ['psychology', 'research'] - found 10 results in 233.34ms
+2025-06-14 01:51:30,916 - __main__ - INFO - Tags: ['artificial_intelligence', 'experimental'] - found 10 results in 77.23ms
+2025-06-14 01:51:31,148 - __main__ - INFO - Tags: ['biology', 'experimental'] - found 10 results in 232.57ms
+2025-06-14 01:51:31,223 - __main__ - INFO - Tags: ['history', 'applied'] - found 10 results in 74.96ms
+2025-06-14 01:51:31,452 - __main__ - INFO - Tags: ['psychology', 'applied'] - found 10 results in 228.69ms
+2025-06-14 01:51:31,526 - __main__ - INFO - Tags: ['literature', 'experimental'] - found 10 results in 74.24ms
+2025-06-14 01:51:31,748 - __main__ - INFO - Tags: ['physics', 'research'] - found 10 results in 221.43ms
+2025-06-14 01:51:31,827 - __main__ - INFO - Tags: ['computer_science', 'experimental'] - found 10 results in 79.36ms
+2025-06-14 01:51:31,909 - __main__ - INFO - Tags: ['mathematics', 'core'] - found 10 results in 80.78ms
+2025-06-14 01:51:32,115 - __main__ - INFO - Tags: ['artificial_intelligence', 'applied'] - found 10 results in 205.69ms
+2025-06-14 01:51:32,187 - __main__ - INFO - Tags: ['physics', 'core'] - found 10 results in 71.05ms
+2025-06-14 01:51:32,420 - __main__ - INFO - Tags: ['literature', 'review'] - found 10 results in 232.32ms
+2025-06-14 01:51:32,686 - __main__ - INFO - Tags: ['psychology', 'theoretical'] - found 10 results in 265.65ms
+2025-06-14 01:51:32,686 - __main__ - INFO - Tag recall: average 10.00 results per query
+2025-06-14 01:51:32,686 - __main__ - INFO - Testing spreading activation with 20 starting nodes...
+2025-06-14 01:51:32,687 - __main__ - INFO - Node eb3f1942-cc9e-4b89-9db2-28e2042418e1, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,687 - __main__ - INFO - Node eb3f1942-cc9e-4b89-9db2-28e2042418e1, depth 2 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,687 - __main__ - INFO - Node eb3f1942-cc9e-4b89-9db2-28e2042418e1, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,687 - __main__ - INFO - Node 8d19777d-bc97-485d-90e9-57effccbdacb, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:51:32,687 - __main__ - INFO - Node 8d19777d-bc97-485d-90e9-57effccbdacb, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,688 - __main__ - INFO - Node 8d19777d-bc97-485d-90e9-57effccbdacb, depth 3 - found 3 related nodes in 0.00ms
+2025-06-14 01:51:32,688 - __main__ - INFO - Node 40c51050-a698-4476-824c-3ff5a93e718b, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,688 - __main__ - INFO - Node 40c51050-a698-4476-824c-3ff5a93e718b, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,688 - __main__ - INFO - Node 40c51050-a698-4476-824c-3ff5a93e718b, depth 3 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,688 - __main__ - INFO - Node 1f3948fa-bb8d-4ef4-9cc2-da204966b7a4, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:51:32,688 - __main__ - INFO - Node 1f3948fa-bb8d-4ef4-9cc2-da204966b7a4, depth 2 - found 3 related nodes in 0.00ms
+2025-06-14 01:51:32,689 - __main__ - INFO - Node 1f3948fa-bb8d-4ef4-9cc2-da204966b7a4, depth 3 - found 5 related nodes in 0.00ms
+2025-06-14 01:51:32,689 - __main__ - INFO - Node acaebee5-4b6e-4d73-b2e8-e30f812156b9, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,689 - __main__ - INFO - Node acaebee5-4b6e-4d73-b2e8-e30f812156b9, depth 2 - found 5 related nodes in 0.00ms
+2025-06-14 01:51:32,689 - __main__ - INFO - Node acaebee5-4b6e-4d73-b2e8-e30f812156b9, depth 3 - found 9 related nodes in 0.00ms
+2025-06-14 01:51:32,689 - __main__ - INFO - Node 736987a9-82e0-4c7b-8b80-af2ea4ad9fe9, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,689 - __main__ - INFO - Node 736987a9-82e0-4c7b-8b80-af2ea4ad9fe9, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node 736987a9-82e0-4c7b-8b80-af2ea4ad9fe9, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node b00f0f4b-56b5-49bf-98e9-ca320e8904c2, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node b00f0f4b-56b5-49bf-98e9-ca320e8904c2, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node b00f0f4b-56b5-49bf-98e9-ca320e8904c2, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node 668049ee-72e0-4ce5-b212-8cad952765ca, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node 668049ee-72e0-4ce5-b212-8cad952765ca, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node 668049ee-72e0-4ce5-b212-8cad952765ca, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,690 - __main__ - INFO - Node b729f72a-dbed-4531-b4b2-fbb08e4d1c64, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node b729f72a-dbed-4531-b4b2-fbb08e4d1c64, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node b729f72a-dbed-4531-b4b2-fbb08e4d1c64, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node 90eabcd9-f27c-4778-8108-5856e66005a1, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node 90eabcd9-f27c-4778-8108-5856e66005a1, depth 2 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node 90eabcd9-f27c-4778-8108-5856e66005a1, depth 3 - found 6 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node ce37d7e9-fd12-4768-9937-c70fa9437b46, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node ce37d7e9-fd12-4768-9937-c70fa9437b46, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,691 - __main__ - INFO - Node ce37d7e9-fd12-4768-9937-c70fa9437b46, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,693 - __main__ - INFO - Node 66d632d4-5ab4-4ec6-833a-ee91af05acb5, depth 1 - found 1 related nodes in 1.50ms
+2025-06-14 01:51:32,693 - __main__ - INFO - Node 66d632d4-5ab4-4ec6-833a-ee91af05acb5, depth 2 - found 3 related nodes in 0.00ms
+2025-06-14 01:51:32,693 - __main__ - INFO - Node 66d632d4-5ab4-4ec6-833a-ee91af05acb5, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,693 - __main__ - INFO - Node facd3119-cec5-408d-bc05-cd20adaf5611, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,693 - __main__ - INFO - Node facd3119-cec5-408d-bc05-cd20adaf5611, depth 2 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,694 - __main__ - INFO - Node facd3119-cec5-408d-bc05-cd20adaf5611, depth 3 - found 5 related nodes in 0.00ms
+2025-06-14 01:51:32,694 - __main__ - INFO - Node daa54d0a-d229-47ae-b8f3-b7bd2d00d4cb, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,694 - __main__ - INFO - Node daa54d0a-d229-47ae-b8f3-b7bd2d00d4cb, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,694 - __main__ - INFO - Node daa54d0a-d229-47ae-b8f3-b7bd2d00d4cb, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,694 - __main__ - INFO - Node 3b9b9645-2c7b-4b46-944b-5d1ee29660f4, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,694 - __main__ - INFO - Node 3b9b9645-2c7b-4b46-944b-5d1ee29660f4, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node 3b9b9645-2c7b-4b46-944b-5d1ee29660f4, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node f29ca42f-77ef-4254-be5c-bbef356ee820, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node f29ca42f-77ef-4254-be5c-bbef356ee820, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node f29ca42f-77ef-4254-be5c-bbef356ee820, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node 991a2a66-457b-4f8f-a6e4-88977f2bcf63, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node 991a2a66-457b-4f8f-a6e4-88977f2bcf63, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,695 - __main__ - INFO - Node 991a2a66-457b-4f8f-a6e4-88977f2bcf63, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,696 - __main__ - INFO - Node e7a40ef8-314b-4916-b8f8-c5684a91e420, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,696 - __main__ - INFO - Node e7a40ef8-314b-4916-b8f8-c5684a91e420, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,696 - __main__ - INFO - Node e7a40ef8-314b-4916-b8f8-c5684a91e420, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,696 - __main__ - INFO - Node f9b31e29-c611-452e-b323-47df92ba6d1c, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,696 - __main__ - INFO - Node f9b31e29-c611-452e-b323-47df92ba6d1c, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,697 - __main__ - INFO - Node f9b31e29-c611-452e-b323-47df92ba6d1c, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,697 - __main__ - INFO - Node 4c995498-ac72-4b6f-8145-7ff80b7f9eb4, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,697 - __main__ - INFO - Node 4c995498-ac72-4b6f-8145-7ff80b7f9eb4, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,697 - __main__ - INFO - Node 4c995498-ac72-4b6f-8145-7ff80b7f9eb4, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:51:32,697 - __main__ - INFO - Spreading activation: average 1.53 results per query
+2025-06-14 01:51:32,697 - __main__ - INFO - Testing concurrent operations performance with 8 workers...
+2025-06-14 01:51:32,698 - __main__ - INFO - Running operations sequentially...
+2025-06-14 01:51:34,082 - __main__ - INFO - Sequential execution completed in 1.38s
+2025-06-14 01:51:34,082 - __main__ - INFO - Running operations with 8 parallel workers...
+2025-06-14 01:51:36,606 - __main__ - INFO - Parallel execution completed in 2.52s
+2025-06-14 01:51:36,606 - __main__ - INFO - Parallel speedup: 0.55x
+2025-06-14 01:51:36,914 - __main__ - INFO - Memory engine stats: {'total_memories': 20000, 'active_memories': 20000, 'average_activation': 0.9600820296885695, 'memory_types': {'note': 784, 'experience': 1646, 'concept': 5023, 'fact': 6060, 'semantic': 1560, 'working': 1959, 'opinion': 1515, 'reference': 793, 'episodic': 448, 'procedural': 212}, 'total_tags': 217, 'total_links': 19902}
+2025-06-14 01:51:37,044 - __main__ - INFO - ================================================================================
+2025-06-14 01:51:37,044 - __main__ - INFO - EXTREME PERFORMANCE TEST RESULTS
+2025-06-14 01:51:37,044 - __main__ - INFO - ================================================================================
+2025-06-14 01:51:37,044 - __main__ - INFO - Retrieval Performance:
+2025-06-14 01:51:37,044 - __main__ - INFO -   - Total operations: 1,000
+2025-06-14 01:51:37,045 - __main__ - INFO -   - Total time: 0.02 seconds
+2025-06-14 01:51:37,045 - __main__ - INFO -   - Speed: 53913.44 nodes/second
+2025-06-14 01:51:37,045 - __main__ - INFO - Content Recall Performance:
+2025-06-14 01:51:37,045 - __main__ - INFO -   - Operations: 50
+2025-06-14 01:51:37,045 - __main__ - INFO -   - Average time: 0.00 ms
+2025-06-14 01:51:37,046 - __main__ - INFO -   - Average results: 140.00
+2025-06-14 01:51:37,046 - __main__ - INFO - Tag Recall Performance:
+2025-06-14 01:51:37,046 - __main__ - INFO -   - Operations: 50
+2025-06-14 01:51:37,046 - __main__ - INFO -   - Average time: 265.65 ms
+2025-06-14 01:51:37,046 - __main__ - INFO -   - Average results: 500.00
+2025-06-14 01:51:37,046 - __main__ - INFO - Spreading Activation Performance:
+2025-06-14 01:51:37,046 - __main__ - INFO -   - Operations: 60
+2025-06-14 01:51:37,046 - __main__ - INFO -   - Average time: 0.00 ms
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Average results: 92.00
+2025-06-14 01:51:37,047 - __main__ - INFO - Memory Usage:
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Peak: 297.29 MB
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Final: 297.29 MB
+2025-06-14 01:51:37,047 - __main__ - INFO - Storage Metrics:
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Data file size: 5.84 MB
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Index file size: 0.99 MB
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Average bytes per node: 612.58
+2025-06-14 01:51:37,047 - __main__ - INFO - Concurrency Performance:
+2025-06-14 01:51:37,047 - __main__ - INFO -   - Sequential time: 1.38 seconds
+2025-06-14 01:51:37,048 - __main__ - INFO -   - Parallel time: 2.52 seconds
+2025-06-14 01:51:37,048 - __main__ - INFO -   - Speedup: 0.55x
+2025-06-14 01:51:37,048 - __main__ - INFO - Metrics saved to data/test_output/metrics.json
+2025-06-14 01:51:37,048 - __main__ - INFO - ================================================================================
+2025-06-14 01:51:37,049 - __main__ - INFO - Shutting down enhanced memory engine...
+2025-06-14 01:51:39,081 - src.core.ramx - INFO - RAMX shutdown complete
+2025-06-14 01:51:39,081 - src.core.memory_io_orchestrator - INFO - Memory I/O Orchestrator shutdown complete
+2025-06-14 01:51:39,081 - __main__ - INFO - ================================================================================
+2025-06-14 01:51:39,081 - __main__ - INFO - EXTREME PERFORMANCE TEST COMPLETED
+2025-06-14 01:51:39,082 - __main__ - INFO - ================================================================================
+2025-06-14 01:56:01,150 - __main__ - INFO - ================================================================================
+2025-06-14 01:56:01,150 - __main__ - INFO - STARTING EXTREME PERFORMANCE TEST
+2025-06-14 01:56:01,150 - __main__ - INFO - ================================================================================
+2025-06-14 01:56:01,159 - __main__ - INFO - System: 12 CPU cores, 81870.14 MB RAM
+2025-06-14 01:56:01,159 - __main__ - INFO - Creating enhanced memory engine...
+2025-06-14 01:56:01,162 - src.core.ramx - INFO - Initialized RAMX with capacity 100000
+2025-06-14 01:56:01,162 - src.core.index_manager - INFO - Initialized enhanced index manager
+2025-06-14 01:56:01,201 - src.core.index_manager - INFO - Loaded index with 20000 entries from data/test_output/hp_mini.mexmap
+2025-06-14 01:56:01,202 - src.core.memory_io_orchestrator - INFO - Loading 20000 nodes from disk into RAM...
+2025-06-14 01:56:01,746 - src.core.memory_io_orchestrator - INFO - Loaded 10000 nodes into RAM
+2025-06-14 01:56:01,747 - src.core.memory_io_orchestrator - INFO - Initialized Memory I/O Orchestrator with paths: data/test_output/hp_mini.mex, data/test_output/hp_mini.mexmap
+2025-06-14 01:56:01,747 - src.core.decay_processor - INFO - Initialized decay processor with exponential model
+2025-06-14 01:56:01,747 - src.core.memory_linker - INFO - Initialized memory linker
+2025-06-14 01:56:01,749 - src.engine.recall_engine - INFO - Ultimate Enhanced Recall Engine initialized with all advanced features
+2025-06-14 01:56:01,749 - src.engine.version_manager - INFO - Initialized version manager
+2025-06-14 01:56:01,749 - src.engine.memory_engine - INFO - Initialized memory engine
+2025-06-14 01:56:01,749 - __main__ - INFO - Generating 50,000 test nodes across 10 domains (ULTRA performance mode)...
+2025-06-14 01:56:01,749 - __main__ - INFO - Found orchestrator directly: MemoryIOOrchestrator
+2025-06-14 01:56:01,750 - __main__ - INFO - Ultra-performance background writer thread started
+2025-06-14 01:56:01,750 - __main__ - INFO - Using 8 parallel generation workers
+2025-06-14 01:56:01,751 - __main__ - INFO - ULTRA Worker 0: Generating nodes 0 to 6249
+2025-06-14 01:56:01,759 - __main__ - INFO - ULTRA Worker 1: Generating nodes 6250 to 12499
+2025-06-14 01:56:01,790 - __main__ - INFO - ULTRA Worker 2: Generating nodes 12500 to 18749
+2025-06-14 01:56:01,791 - __main__ - INFO - ULTRA Worker 3: Generating nodes 18750 to 24999
+2025-06-14 01:56:01,792 - __main__ - INFO - ULTRA Worker 4: Generating nodes 25000 to 31249
+2025-06-14 01:56:01,793 - __main__ - INFO - ULTRA Worker 5: Generating nodes 31250 to 37499
+2025-06-14 01:56:01,794 - __main__ - INFO - ULTRA Worker 6: Generating nodes 37500 to 43749
+2025-06-14 01:56:01,794 - __main__ - INFO - ULTRA Worker 7: Generating nodes 43750 to 49999
+2025-06-14 01:56:15,742 - __main__ - INFO - All node generation workers completed, generated 50000 nodes
+2025-06-14 01:56:15,742 - __main__ - INFO - Waiting for background writer to complete (15 batches pending)...
+2025-06-14 01:56:15,989 - src.core.index_manager - INFO - Saved index with 61000 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:15,990 - src.core.index_manager - INFO - Flushed 41000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:15,990 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 41000 nodes (41 batches) in 4.03s (10180.54 nodes/sec)
+2025-06-14 01:56:16,268 - src.core.index_manager - INFO - Saved index with 61250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:16,269 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:16,270 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (42 batches) in 0.24s (1057.84 nodes/sec)
+2025-06-14 01:56:16,523 - src.core.index_manager - INFO - Saved index with 62250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:16,524 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:16,525 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (43 batches) in 0.25s (3936.44 nodes/sec)
+2025-06-14 01:56:16,789 - src.core.index_manager - INFO - Saved index with 63250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:16,790 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:16,791 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (44 batches) in 0.26s (3777.73 nodes/sec)
+2025-06-14 01:56:17,043 - src.core.index_manager - INFO - Saved index with 64250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,045 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,046 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (45 batches) in 0.25s (3958.23 nodes/sec)
+2025-06-14 01:56:17,292 - src.core.index_manager - INFO - Saved index with 65250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,294 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,294 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (46 batches) in 0.25s (4037.73 nodes/sec)
+2025-06-14 01:56:17,565 - src.core.index_manager - INFO - Saved index with 66250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,566 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,567 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (47 batches) in 0.27s (3694.80 nodes/sec)
+2025-06-14 01:56:17,832 - src.core.index_manager - INFO - Saved index with 67250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,834 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:17,834 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (48 batches) in 0.27s (3753.94 nodes/sec)
+2025-06-14 01:56:18,080 - src.core.index_manager - INFO - Saved index with 68250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,081 - src.core.index_manager - INFO - Flushed 1000 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,082 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 1000 nodes (49 batches) in 0.25s (4064.75 nodes/sec)
+2025-06-14 01:56:18,323 - src.core.index_manager - INFO - Saved index with 68500 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,325 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,326 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (50 batches) in 0.24s (1030.88 nodes/sec)
+2025-06-14 01:56:18,582 - src.core.index_manager - INFO - Saved index with 68750 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,582 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,584 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (51 batches) in 0.26s (972.77 nodes/sec)
+2025-06-14 01:56:18,858 - src.core.index_manager - INFO - Saved index with 69000 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,859 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:18,860 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (52 batches) in 0.28s (904.52 nodes/sec)
+2025-06-14 01:56:19,134 - src.core.index_manager - INFO - Saved index with 69250 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,136 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,137 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (53 batches) in 0.28s (907.00 nodes/sec)
+2025-06-14 01:56:19,385 - src.core.index_manager - INFO - Saved index with 69500 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,387 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,388 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (54 batches) in 0.25s (1001.57 nodes/sec)
+2025-06-14 01:56:19,654 - src.core.index_manager - INFO - Saved index with 69750 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,654 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,655 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (55 batches) in 0.27s (938.22 nodes/sec)
+2025-06-14 01:56:19,895 - src.core.index_manager - INFO - Saved index with 70000 entries to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,896 - src.core.index_manager - INFO - Flushed 250 batch updates to data/test_output/hp_mini.mexmap
+2025-06-14 01:56:19,897 - __main__ - INFO - ULTRA Writer: Wrote mega-batch of 250 nodes (56 batches) in 0.24s (1037.66 nodes/sec)
+2025-06-14 01:56:19,897 - __main__ - INFO - Ultra-performance background writer finished (processed 56 batches)
+2025-06-14 01:56:19,898 - __main__ - INFO - Successfully inserted 50,000 nodes (ULTRA-performance mode)
+2025-06-14 01:56:19,899 - __main__ - INFO - Total insertion time: 18.15s
+2025-06-14 01:56:19,899 - __main__ - INFO - Testing retrieval performance with 1000 random nodes...
+2025-06-14 01:56:19,916 - __main__ - INFO - Retrieved 1000/1000 nodes (100.00%) in 0.02s
+2025-06-14 01:56:19,916 - __main__ - INFO - Retrieval performance: 61494.65 nodes/second
+2025-06-14 01:56:19,916 - __main__ - INFO - Testing content-based recall with 50 queries...
+2025-06-14 01:56:37,128 - __main__ - INFO - Query: 'string theory' - found 0 results in 17211.89ms
+2025-06-14 01:56:37,201 - __main__ - INFO - Query: 'biology genetics dna' - found 10 results in 72.63ms
+2025-06-14 01:56:37,201 - __main__ - INFO - Query: 'episodic personal experience' - found 0 results in 0.00ms
+2025-06-14 01:56:37,202 - __main__ - INFO - Query: 'complexity analysis' - found 0 results in 1.00ms
+2025-06-14 01:56:37,202 - __main__ - INFO - Query: 'number theory' - found 0 results in 0.00ms
+2025-06-14 01:56:37,202 - __main__ - INFO - Query: 'literary criticism' - found 0 results in 0.00ms
+2025-06-14 01:56:37,202 - __main__ - INFO - Query: 'metaphysics' - found 0 results in 0.00ms
+2025-06-14 01:56:37,202 - __main__ - INFO - Query: 'gene expression' - found 0 results in 0.00ms
+2025-06-14 01:56:37,202 - __main__ - INFO - Query: 'neuroscience' - found 0 results in 0.00ms
+2025-06-14 01:56:37,203 - __main__ - INFO - Query: 'relativity computer science algorithms data structures' - found 0 results in 1.51ms
+2025-06-14 01:56:37,203 - __main__ - INFO - Query: 'compiler design' - found 0 results in 0.00ms
+2025-06-14 01:56:37,283 - __main__ - INFO - Query: 'philosophy ethics morality' - found 10 results in 79.79ms
+2025-06-14 01:56:37,360 - __main__ - INFO - Query: 'literature analysis interpretation' - found 10 results in 76.89ms
+2025-06-14 01:56:37,941 - __main__ - INFO - Query: 'chemistry organic compounds' - found 10 results in 580.64ms
+2025-06-14 01:56:38,014 - __main__ - INFO - Query: 'developmental psychology' - found 10 results in 72.74ms
+2025-06-14 01:56:38,016 - __main__ - INFO - Query: 'biochemistry' - found 0 results in 0.00ms
+2025-06-14 01:56:38,016 - __main__ - INFO - Query: 'polymer science' - found 0 results in 0.00ms
+2025-06-14 01:56:38,156 - __main__ - INFO - Query: 'cellular biology developmental psychology' - found 10 results in 140.45ms
+2025-06-14 01:56:38,157 - __main__ - INFO - Query: 'deep learning' - found 0 results in 1.00ms
+2025-06-14 01:56:38,157 - __main__ - INFO - Query: 'evolutionary theory' - found 0 results in 0.00ms
+2025-06-14 01:56:38,157 - __main__ - INFO - Query: 'calculus' - found 0 results in 0.00ms
+2025-06-14 01:56:38,603 - __main__ - INFO - Query: 'cellular biology' - found 10 results in 445.87ms
+2025-06-14 01:56:38,603 - __main__ - INFO - Query: 'narrative structure' - found 0 results in 0.00ms
+2025-06-14 01:56:38,604 - __main__ - INFO - Query: 'neural networks' - found 0 results in 1.01ms
+2025-06-14 01:56:38,604 - __main__ - INFO - Query: 'relativity' - found 0 results in 0.00ms
+2025-06-14 01:56:38,604 - __main__ - INFO - Query: 'semantic conceptual framework' - found 0 results in 0.00ms
+2025-06-14 01:56:38,604 - __main__ - INFO - Query: 'procedural motor skills' - found 0 results in 0.00ms
+2025-06-14 01:56:38,605 - __main__ - INFO - Query: 'linear algebra' - found 0 results in 1.21ms
+2025-06-14 01:56:38,606 - __main__ - INFO - Query: 'existentialism' - found 0 results in 0.00ms
+2025-06-14 01:56:38,798 - __main__ - INFO - Query: 'semantic knowledge facts' - found 10 results in 192.37ms
+2025-06-14 01:56:38,800 - __main__ - INFO - Query: 'artificial intelligence machine learning' - found 0 results in 1.51ms
+2025-06-14 01:56:38,800 - __main__ - INFO - Query: 'computer science algorithms data structures' - found 0 results in 0.00ms
+2025-06-14 01:56:38,800 - __main__ - INFO - Query: 'thermodynamics' - found 0 results in 0.00ms
+2025-06-14 01:56:38,801 - __main__ - INFO - Query: 'epistemology' - found 0 results in 0.00ms
+2025-06-14 01:56:38,823 - __main__ - INFO - Query: 'quantum field theory' - found 10 results in 22.62ms
+2025-06-14 01:56:38,824 - __main__ - INFO - Query: 'procedural skills automation' - found 0 results in 0.00ms
+2025-06-14 01:56:38,824 - __main__ - INFO - Query: 'industrial revolution' - found 0 results in 0.00ms
+2025-06-14 01:56:38,824 - __main__ - INFO - Query: 'working memory temporary' - found 0 results in 0.00ms
+2025-06-14 01:56:38,882 - __main__ - INFO - Query: 'physics quantum mechanics' - found 10 results in 57.74ms
+2025-06-14 01:56:38,883 - __main__ - INFO - Query: 'working memory processing' - found 0 results in 1.00ms
+2025-06-14 01:56:38,884 - __main__ - INFO - Query: 'renaissance' - found 0 results in 0.51ms
+2025-06-14 01:56:38,909 - __main__ - INFO - Query: 'world war' - found 10 results in 25.08ms
+2025-06-14 01:56:38,910 - __main__ - INFO - Query: 'reinforcement learning' - found 0 results in 0.00ms
+2025-06-14 01:56:38,910 - __main__ - INFO - Query: 'poetry analysis' - found 0 results in 0.00ms
+2025-06-14 01:56:38,911 - __main__ - INFO - Query: 'graph theory' - found 0 results in 1.00ms
+2025-06-14 01:56:39,318 - __main__ - INFO - Query: 'history ancient civilizations' - found 10 results in 407.75ms
+2025-06-14 01:56:39,387 - __main__ - INFO - Query: 'psychology cognitive behavioral' - found 10 results in 68.49ms
+2025-06-14 01:56:39,388 - __main__ - INFO - Query: 'episodic autobiographical' - found 0 results in 1.00ms
+2025-06-14 01:56:39,458 - __main__ - INFO - Query: 'mathematics probability statistics' - found 10 results in 70.47ms
+2025-06-14 01:56:39,458 - __main__ - INFO - Query: 'behaviorism' - found 0 results in 0.00ms
+2025-06-14 01:56:39,458 - __main__ - INFO - Content recall: average 2.80 results per query
+2025-06-14 01:56:39,458 - __main__ - INFO - Testing tag-based recall with 50 queries...
+2025-06-14 01:56:40,990 - __main__ - INFO - Tags: ['literature', 'theoretical'] - found 10 results in 1531.07ms
+2025-06-14 01:56:41,372 - __main__ - INFO - Tags: ['psychology'] - found 10 results in 380.59ms
+2025-06-14 01:56:41,428 - __main__ - INFO - Tags: ['mathematics'] - found 10 results in 54.97ms
+2025-06-14 01:56:42,031 - __main__ - INFO - Tags: ['history', 'review'] - found 10 results in 601.10ms
+2025-06-14 01:56:42,239 - __main__ - INFO - Tags: ['biology', 'theoretical'] - found 10 results in 207.06ms
+2025-06-14 01:56:42,832 - __main__ - INFO - Tags: ['biology', 'experimental'] - found 10 results in 593.36ms
+2025-06-14 01:56:43,424 - __main__ - INFO - Tags: ['biology', 'review'] - found 10 results in 592.09ms
+2025-06-14 01:56:44,020 - __main__ - INFO - Tags: ['history', 'research'] - found 10 results in 596.08ms
+2025-06-14 01:56:44,079 - __main__ - INFO - Tags: ['literature'] - found 10 results in 58.88ms
+2025-06-14 01:56:44,689 - __main__ - INFO - Tags: ['biology', 'core'] - found 10 results in 608.98ms
+2025-06-14 01:56:44,911 - __main__ - INFO - Tags: ['psychology', 'experimental'] - found 10 results in 221.06ms
+2025-06-14 01:56:45,491 - __main__ - INFO - Tags: ['philosophy', 'core'] - found 10 results in 579.90ms
+2025-06-14 01:56:46,079 - __main__ - INFO - Tags: ['artificial_intelligence', 'important'] - found 10 results in 587.43ms
+2025-06-14 01:56:46,713 - __main__ - INFO - Tags: ['physics', 'research'] - found 10 results in 632.92ms
+2025-06-14 01:56:46,950 - __main__ - INFO - Tags: ['chemistry', 'experimental'] - found 10 results in 237.17ms
+2025-06-14 01:56:47,532 - __main__ - INFO - Tags: ['biology', 'important'] - found 10 results in 581.95ms
+2025-06-14 01:56:48,199 - __main__ - INFO - Tags: ['literature', 'experimental'] - found 10 results in 665.62ms
+2025-06-14 01:56:48,899 - __main__ - INFO - Tags: ['physics', 'important'] - found 10 results in 699.66ms
+2025-06-14 01:56:49,134 - __main__ - INFO - Tags: ['computer_science', 'applied'] - found 10 results in 235.47ms
+2025-06-14 01:56:49,798 - __main__ - INFO - Tags: ['philosophy', 'applied'] - found 10 results in 664.17ms
+2025-06-14 01:56:50,417 - __main__ - INFO - Tags: ['computer_science', 'review'] - found 10 results in 617.21ms
+2025-06-14 01:56:50,686 - __main__ - INFO - Tags: ['history', 'experimental'] - found 10 results in 269.39ms
+2025-06-14 01:56:51,360 - __main__ - INFO - Tags: ['philosophy', 'review'] - found 10 results in 674.40ms
+2025-06-14 01:56:52,005 - __main__ - INFO - Tags: ['artificial_intelligence', 'research'] - found 10 results in 643.71ms
+2025-06-14 01:56:52,599 - __main__ - INFO - Tags: ['computer_science', 'core'] - found 10 results in 594.15ms
+2025-06-14 01:56:53,275 - __main__ - INFO - Tags: ['philosophy', 'important'] - found 10 results in 676.01ms
+2025-06-14 01:56:53,523 - __main__ - INFO - Tags: ['chemistry', 'review'] - found 10 results in 246.95ms
+2025-06-14 01:56:53,946 - __main__ - INFO - Tags: ['artificial_intelligence'] - found 10 results in 422.15ms
+2025-06-14 01:56:54,015 - __main__ - INFO - Tags: ['history'] - found 10 results in 67.70ms
+2025-06-14 01:56:54,696 - __main__ - INFO - Tags: ['literature', 'review'] - found 10 results in 681.87ms
+2025-06-14 01:56:54,957 - __main__ - INFO - Tags: ['physics', 'experimental'] - found 10 results in 260.57ms
+2025-06-14 01:56:55,599 - __main__ - INFO - Tags: ['mathematics', 'core'] - found 10 results in 641.28ms
+2025-06-14 01:56:55,683 - __main__ - INFO - Tags: ['chemistry'] - found 10 results in 83.82ms
+2025-06-14 01:56:56,323 - __main__ - INFO - Tags: ['physics', 'review'] - found 10 results in 640.02ms
+2025-06-14 01:56:56,974 - __main__ - INFO - Tags: ['artificial_intelligence', 'theoretical'] - found 10 results in 648.97ms
+2025-06-14 01:56:57,629 - __main__ - INFO - Tags: ['philosophy', 'research'] - found 10 results in 655.47ms
+2025-06-14 01:56:57,703 - __main__ - INFO - Tags: ['philosophy'] - found 10 results in 74.49ms
+2025-06-14 01:56:57,919 - __main__ - INFO - Tags: ['literature', 'research'] - found 10 results in 214.83ms
+2025-06-14 01:56:58,394 - __main__ - INFO - Tags: ['biology'] - found 10 results in 475.43ms
+2025-06-14 01:56:58,660 - __main__ - INFO - Tags: ['chemistry', 'applied'] - found 10 results in 264.90ms
+2025-06-14 01:56:59,297 - __main__ - INFO - Tags: ['chemistry', 'theoretical'] - found 10 results in 636.11ms
+2025-06-14 01:57:00,181 - __main__ - INFO - Tags: ['computer_science', 'experimental'] - found 10 results in 883.92ms
+2025-06-14 01:57:01,050 - __main__ - INFO - Tags: ['psychology', 'review'] - found 10 results in 868.42ms
+2025-06-14 01:57:01,876 - __main__ - INFO - Tags: ['chemistry', 'research'] - found 10 results in 826.10ms
+2025-06-14 01:57:02,119 - __main__ - INFO - Tags: ['psychology', 'applied'] - found 10 results in 242.95ms
+2025-06-14 01:57:02,553 - __main__ - INFO - Tags: ['physics'] - found 10 results in 434.82ms
+2025-06-14 01:57:02,822 - __main__ - INFO - Tags: ['artificial_intelligence', 'applied'] - found 10 results in 268.38ms
+2025-06-14 01:57:03,486 - __main__ - INFO - Tags: ['literature', 'important'] - found 10 results in 664.12ms
+2025-06-14 01:57:04,172 - __main__ - INFO - Tags: ['mathematics', 'theoretical'] - found 10 results in 684.82ms
+2025-06-14 01:57:04,917 - __main__ - INFO - Tags: ['computer_science', 'research'] - found 10 results in 743.74ms
+2025-06-14 01:57:04,917 - __main__ - INFO - Tag recall: average 10.00 results per query
+2025-06-14 01:57:04,917 - __main__ - INFO - Testing spreading activation with 20 starting nodes...
+2025-06-14 01:57:04,917 - __main__ - INFO - Node 386d6772-e7ba-4015-896e-35e92ca6b289, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,917 - __main__ - INFO - Node 386d6772-e7ba-4015-896e-35e92ca6b289, depth 2 - found 3 related nodes in 0.00ms
+2025-06-14 01:57:04,918 - __main__ - INFO - Node 386d6772-e7ba-4015-896e-35e92ca6b289, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:57:04,918 - __main__ - INFO - Node 80183e79-f519-4671-9b48-6526204fd9e4, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,918 - __main__ - INFO - Node 80183e79-f519-4671-9b48-6526204fd9e4, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,918 - __main__ - INFO - Node 80183e79-f519-4671-9b48-6526204fd9e4, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:57:04,918 - __main__ - INFO - Node ca48126b-80e7-42fb-b768-89412806fe4a, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node ca48126b-80e7-42fb-b768-89412806fe4a, depth 2 - found 3 related nodes in 1.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node ca48126b-80e7-42fb-b768-89412806fe4a, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node 3fdeb6a9-7090-4aea-9921-60c6893b3c76, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node 3fdeb6a9-7090-4aea-9921-60c6893b3c76, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node 3fdeb6a9-7090-4aea-9921-60c6893b3c76, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node 797f7c5e-a592-4289-bbb0-5819c25c8982, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,919 - __main__ - INFO - Node 797f7c5e-a592-4289-bbb0-5819c25c8982, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,920 - __main__ - INFO - Node 797f7c5e-a592-4289-bbb0-5819c25c8982, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,920 - __main__ - INFO - Node 899cfa2d-06e5-48e8-bc3e-cd16af44a314, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,920 - __main__ - INFO - Node 899cfa2d-06e5-48e8-bc3e-cd16af44a314, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,920 - __main__ - INFO - Node 899cfa2d-06e5-48e8-bc3e-cd16af44a314, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,920 - __main__ - INFO - Node ada6db8e-2157-4984-8a73-29e173673eef, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,920 - __main__ - INFO - Node ada6db8e-2157-4984-8a73-29e173673eef, depth 2 - found 4 related nodes in 0.00ms
+2025-06-14 01:57:04,921 - __main__ - INFO - Node ada6db8e-2157-4984-8a73-29e173673eef, depth 3 - found 6 related nodes in 1.00ms
+2025-06-14 01:57:04,921 - __main__ - INFO - Node 04a205fe-e796-48c1-912d-18bce3266f77, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,921 - __main__ - INFO - Node 04a205fe-e796-48c1-912d-18bce3266f77, depth 2 - found 4 related nodes in 0.00ms
+2025-06-14 01:57:04,921 - __main__ - INFO - Node 04a205fe-e796-48c1-912d-18bce3266f77, depth 3 - found 4 related nodes in 0.00ms
+2025-06-14 01:57:04,921 - __main__ - INFO - Node f5c5b3a7-5700-4dad-9103-d4efabd295b1, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,922 - __main__ - INFO - Node f5c5b3a7-5700-4dad-9103-d4efabd295b1, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,922 - __main__ - INFO - Node f5c5b3a7-5700-4dad-9103-d4efabd295b1, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,922 - __main__ - INFO - Node 6e0f1b50-7e95-4e46-9c11-427db2297479, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,922 - __main__ - INFO - Node 6e0f1b50-7e95-4e46-9c11-427db2297479, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,923 - __main__ - INFO - Node 6e0f1b50-7e95-4e46-9c11-427db2297479, depth 3 - found 2 related nodes in 1.00ms
+2025-06-14 01:57:04,923 - __main__ - INFO - Node 94cd2fb4-10f6-4bdd-8dc3-eeee7dbf5b0f, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,923 - __main__ - INFO - Node 94cd2fb4-10f6-4bdd-8dc3-eeee7dbf5b0f, depth 2 - found 3 related nodes in 0.00ms
+2025-06-14 01:57:04,924 - __main__ - INFO - Node 94cd2fb4-10f6-4bdd-8dc3-eeee7dbf5b0f, depth 3 - found 7 related nodes in 0.00ms
+2025-06-14 01:57:04,924 - __main__ - INFO - Node ea9c1cef-ce2f-4259-9cac-956c0cf8cbed, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,924 - __main__ - INFO - Node ea9c1cef-ce2f-4259-9cac-956c0cf8cbed, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,924 - __main__ - INFO - Node ea9c1cef-ce2f-4259-9cac-956c0cf8cbed, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,924 - __main__ - INFO - Node 2a524744-1c7d-416e-a03f-24aad5ce3539, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,924 - __main__ - INFO - Node 2a524744-1c7d-416e-a03f-24aad5ce3539, depth 2 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 2a524744-1c7d-416e-a03f-24aad5ce3539, depth 3 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 95541ea7-256f-4316-9cfe-4f0efaa69d90, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 95541ea7-256f-4316-9cfe-4f0efaa69d90, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 95541ea7-256f-4316-9cfe-4f0efaa69d90, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 26655bb8-8390-432a-ab0b-4d7923b528dd, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 26655bb8-8390-432a-ab0b-4d7923b528dd, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,925 - __main__ - INFO - Node 26655bb8-8390-432a-ab0b-4d7923b528dd, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,926 - __main__ - INFO - Node 0c3ee02f-7370-401f-a788-eff19472538f, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,926 - __main__ - INFO - Node 0c3ee02f-7370-401f-a788-eff19472538f, depth 2 - found 6 related nodes in 0.00ms
+2025-06-14 01:57:04,926 - __main__ - INFO - Node 0c3ee02f-7370-401f-a788-eff19472538f, depth 3 - found 11 related nodes in 0.00ms
+2025-06-14 01:57:04,926 - __main__ - INFO - Node 909f56b8-3b92-4d64-ab72-26447fd8d341, depth 1 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,927 - __main__ - INFO - Node 909f56b8-3b92-4d64-ab72-26447fd8d341, depth 2 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,927 - __main__ - INFO - Node 909f56b8-3b92-4d64-ab72-26447fd8d341, depth 3 - found 2 related nodes in 0.00ms
+2025-06-14 01:57:04,927 - __main__ - INFO - Node 1590bac0-b9c4-4422-a210-39314eb631f2, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,927 - __main__ - INFO - Node 1590bac0-b9c4-4422-a210-39314eb631f2, depth 2 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,927 - __main__ - INFO - Node 1590bac0-b9c4-4422-a210-39314eb631f2, depth 3 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,928 - __main__ - INFO - Node 033010ce-d041-4df1-893d-f9de8090b5c8, depth 1 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,928 - __main__ - INFO - Node 033010ce-d041-4df1-893d-f9de8090b5c8, depth 2 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,928 - __main__ - INFO - Node 033010ce-d041-4df1-893d-f9de8090b5c8, depth 3 - found 1 related nodes in 0.00ms
+2025-06-14 01:57:04,928 - __main__ - INFO - Node fb7a1e30-3107-4d9e-b481-f342178e593d, depth 1 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,929 - __main__ - INFO - Node fb7a1e30-3107-4d9e-b481-f342178e593d, depth 2 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,929 - __main__ - INFO - Node fb7a1e30-3107-4d9e-b481-f342178e593d, depth 3 - found 0 related nodes in 0.00ms
+2025-06-14 01:57:04,929 - __main__ - INFO - Spreading activation: average 1.63 results per query
+2025-06-14 01:57:04,929 - __main__ - INFO - Testing concurrent operations performance with 8 workers...
+2025-06-14 01:57:04,930 - __main__ - INFO - Running operations sequentially...
+2025-06-14 01:57:10,303 - __main__ - INFO - Sequential execution completed in 5.37s
+2025-06-14 01:57:10,304 - __main__ - INFO - Running operations with 8 parallel workers...
+2025-06-14 01:57:19,012 - __main__ - INFO - Parallel execution completed in 8.71s
+2025-06-14 01:57:19,012 - __main__ - INFO - Parallel speedup: 0.62x
+2025-06-14 01:57:20,533 - __main__ - INFO - Memory engine stats: {'total_memories': 60000, 'active_memories': 60000, 'average_activation': 0.41726980123304136, 'memory_types': {'semantic': 4833, 'fact': 18193, 'opinion': 4697, 'note': 2396, 'reference': 2446, 'concept': 14903, 'experience': 4827, 'working': 5999, 'episodic': 1128, 'procedural': 578}, 'total_tags': 217, 'total_links': 60179}
+2025-06-14 01:57:20,964 - __main__ - INFO - ================================================================================
+2025-06-14 01:57:20,964 - __main__ - INFO - EXTREME PERFORMANCE TEST RESULTS
+2025-06-14 01:57:20,964 - __main__ - INFO - ================================================================================
+2025-06-14 01:57:20,964 - __main__ - INFO - Retrieval Performance:
+2025-06-14 01:57:20,964 - __main__ - INFO -   - Total operations: 1,000
+2025-06-14 01:57:20,965 - __main__ - INFO -   - Total time: 0.02 seconds
+2025-06-14 01:57:20,965 - __main__ - INFO -   - Speed: 61494.65 nodes/second
+2025-06-14 01:57:20,965 - __main__ - INFO - Content Recall Performance:
+2025-06-14 01:57:20,965 - __main__ - INFO -   - Operations: 50
+2025-06-14 01:57:20,965 - __main__ - INFO -   - Average time: 0.00 ms
+2025-06-14 01:57:20,965 - __main__ - INFO -   - Average results: 140.00
+2025-06-14 01:57:20,965 - __main__ - INFO - Tag Recall Performance:
+2025-06-14 01:57:20,965 - __main__ - INFO -   - Operations: 50
+2025-06-14 01:57:20,966 - __main__ - INFO -   - Average time: 743.74 ms
+2025-06-14 01:57:20,966 - __main__ - INFO -   - Average results: 500.00
+2025-06-14 01:57:20,966 - __main__ - INFO - Spreading Activation Performance:
+2025-06-14 01:57:20,966 - __main__ - INFO -   - Operations: 60
+2025-06-14 01:57:20,966 - __main__ - INFO -   - Average time: 0.00 ms
+2025-06-14 01:57:20,967 - __main__ - INFO -   - Average results: 98.00
+2025-06-14 01:57:20,967 - __main__ - INFO - Memory Usage:
+2025-06-14 01:57:20,967 - __main__ - INFO -   - Peak: 499.71 MB
+2025-06-14 01:57:20,967 - __main__ - INFO -   - Final: 499.71 MB
+2025-06-14 01:57:20,967 - __main__ - INFO - Storage Metrics:
+2025-06-14 01:57:20,967 - __main__ - INFO -   - Data file size: 20.50 MB
+2025-06-14 01:57:20,967 - __main__ - INFO -   - Index file size: 3.50 MB
+2025-06-14 01:57:20,967 - __main__ - INFO -   - Average bytes per node: 429.99
+2025-06-14 01:57:20,968 - __main__ - INFO - Concurrency Performance:
+2025-06-14 01:57:20,968 - __main__ - INFO -   - Sequential time: 5.37 seconds
+2025-06-14 01:57:20,968 - __main__ - INFO -   - Parallel time: 8.71 seconds
+2025-06-14 01:57:20,968 - __main__ - INFO -   - Speedup: 0.62x
+2025-06-14 01:57:20,968 - __main__ - INFO - Metrics saved to data/test_output/metrics.json
+2025-06-14 01:57:20,969 - __main__ - INFO - ================================================================================
+2025-06-14 01:57:20,969 - __main__ - INFO - Shutting down enhanced memory engine...
+2025-06-14 01:57:24,152 - src.core.ramx - INFO - RAMX shutdown complete
+2025-06-14 01:57:24,152 - src.core.memory_io_orchestrator - INFO - Memory I/O Orchestrator shutdown complete
+2025-06-14 01:57:24,152 - __main__ - INFO - ================================================================================
+2025-06-14 01:57:24,152 - __main__ - INFO - EXTREME PERFORMANCE TEST COMPLETED
+2025-06-14 01:57:24,152 - __main__ - INFO - ================================================================================

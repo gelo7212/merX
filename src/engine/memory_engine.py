@@ -2,10 +2,11 @@
 Main memory engine - orchestrates all memory operations.
 """
 
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Union
 from uuid import UUID, uuid4
 from datetime import datetime
 import logging
+import re
 
 from src.interfaces import (
     IMemoryEngine,
@@ -62,8 +63,8 @@ class MemoryEngine(IMemoryEngine):
         self,
         content: str,
         node_type: str = "fact",
-        tags: List[str] = None,
-        related_ids: List[UUID] = None,
+        tags: Optional[List[str]] = None,
+        related_ids: Optional[List[UUID]] = None,
         version_of: Optional[UUID] = None,
         decay_rate: float = 0.02,
     ) -> UUID:
@@ -73,9 +74,11 @@ class MemoryEngine(IMemoryEngine):
 
         # Extract tags if not provided
         if tags is None:
-            tags = self._extract_tags(content)        # Prepare links list
+            tags = self._extract_tags(content)
+
+        # Prepare links list
         links = []
-        
+
         # Add links to related memories
         if related_ids:
             for related_id in related_ids:
@@ -141,63 +144,142 @@ class MemoryEngine(IMemoryEngine):
         node = self.storage.read_node_by_id(node_id)
         if not node:
             logger.warning(f"Cannot update activation for non-existent node {node_id}")
-            return        # Refresh activation
+            return
+
+        # Store original activation for logging
+        original_activation = node.activation
+
+        # Refresh activation
         updated_node = self.decay_processor.refresh_activation(node, boost)
 
-        # In a real implementation, we would update the stored node
-        # For now, just log the operation
-        logger.debug(
-            f"Updated activation for {node_id}: {node.activation:.3f} -> {updated_node.activation:.3f}"
-        )
+        # Try multiple update methods for different storage types
+        update_success = False        # Method 1: Direct RAMX update (fastest for RAMX-based storage)
+        if hasattr(self.storage, 'ramx') and self.storage.ramx:  # type: ignore
+            try:
+                ramx_node = self.storage.ramx.get_node(node_id)  # type: ignore
+                if ramx_node:
+                    ramx_node.boost(boost)
+                    update_success = True
+                    logger.debug(
+                        f"Updated RAMX activation for {node_id}: {original_activation:.3f} -> {ramx_node.activation:.3f}"
+                    )
+            except Exception as e:
+                logger.debug(f"RAMX update failed for {node_id}: {e}")
+
+        # Method 2: Storage update_node method
+        if not update_success and hasattr(self.storage, 'update_node'):
+            try:
+                success = self.storage.update_node(updated_node)  # type: ignore
+                if success:
+                    update_success = True
+                    logger.debug(
+                        f"Updated storage activation for {node_id}: {original_activation:.3f} -> {updated_node.activation:.3f}"
+                    )
+            except Exception as e:
+                logger.debug(f"Storage update failed for {node_id}: {e}")
+
+        # Method 3: Specific activation update method
+        if not update_success and hasattr(self.storage, 'update_node_activation'):
+            try:
+                success = self.storage.update_node_activation(node_id, updated_node.activation)  # type: ignore
+                if success:
+                    update_success = True
+                    logger.debug(
+                        f"Updated node activation for {node_id}: {original_activation:.3f} -> {updated_node.activation:.3f}"
+                    )
+            except Exception as e:
+                logger.debug(f"Activation update failed for {node_id}: {e}")
+
+        # Log result
+        if not update_success:
+            logger.debug(
+                f"Activation update not persisted for {node_id}: {original_activation:.3f} -> {updated_node.activation:.3f}"
+            )
 
     def recall_memories(
         self,
-        query: str = None,
-        tags: List[str] = None,
+        query: Optional[str] = None,
+        tags: Optional[List[str]] = None,
         limit: int = 10,
-        context_ids: List[UUID] = None,
+        context_ids: Optional[List[UUID]] = None,
     ) -> List[MemoryNode]:
         """Recall memories based on query and/or tags."""
         memories = []
-        
+
         # Use content-based recall if query provided
         if query:
             memories = self.recall_engine.recall_by_content(query, limit)
-        
+
         # Use tag-based recall if tags provided
         elif tags:
             memories = self.recall_engine.recall_by_tags(tags, limit)
-        
+
         # Fall back to top activated memories
         else:
-            memories = self.recall_engine.get_top_activated(limit)
-
-        # Update activation for recalled memories
+            memories = self.recall_engine.get_top_activated(limit)        # Update activation for recalled memories
         for memory in memories:
             self.update_memory_activation(memory.id, boost=0.03)
-
+        
         logger.debug(f"Recalled {len(memories)} memories")
         return memories
 
     def apply_global_decay(self) -> int:
         """Apply decay to all memories. Returns number of nodes processed."""
-        all_nodes = self.storage.get_all_nodes()
-        current_time = datetime.now()
         processed_count = 0
+        current_time = datetime.now()        # Try RAMX direct decay first (most efficient)
+        if hasattr(self.storage, 'ramx') and self.storage.ramx:  # type: ignore
+            try:
+                processed_count = self.storage.ramx.apply_global_decay()  # type: ignore
+                logger.info(f"Applied RAMX decay to {processed_count} memory nodes")
+                return processed_count
+            except Exception as e:
+                logger.warning(f"RAMX decay failed, falling back to storage decay: {e}")
 
+        # Try storage-level decay
+        if hasattr(self.storage, 'apply_global_decay'):
+            try:
+                processed_count = self.storage.apply_global_decay()  # type: ignore
+                logger.info(f"Applied storage decay to {processed_count} memory nodes")
+                return processed_count
+            except Exception as e:
+                logger.warning(f"Storage decay failed, falling back to manual decay: {e}")
+
+        # Fallback: manual decay processing
+        all_nodes = self.storage.get_all_nodes()
+        
         for node in all_nodes:
             try:
                 # Apply decay
                 decayed_node = self.decay_processor.apply_decay(node, current_time)
 
-                # In a real implementation, we would update the stored node
-                # For now, just count the operation
-                processed_count += 1
+                # Try multiple update methods
+                update_success = False
+
+                # Method 1: Direct RAMX update
+                if hasattr(self.storage, 'ramx') and self.storage.ramx:  # type: ignore
+                    try:
+                        ramx_node = self.storage.ramx.get_node(node.id)  # type: ignore
+                        if ramx_node:
+                            ramx_node.decay(current_time.timestamp())
+                            update_success = True
+                    except Exception as e:
+                        logger.debug(f"RAMX decay update failed for {node.id}: {e}")
+
+                # Method 2: Storage update
+                if not update_success and hasattr(self.storage, 'update_node'):
+                    try:
+                        self.storage.update_node(decayed_node)  # type: ignore
+                        update_success = True
+                    except Exception as e:
+                        logger.debug(f"Storage update failed for {node.id}: {e}")
+
+                if update_success:
+                    processed_count += 1
 
             except Exception as e:
                 logger.error(f"Failed to apply decay to {node.id}: {e}")
 
-        logger.info(f"Applied decay to {processed_count} memory nodes")
+        logger.info(f"Applied manual decay to {processed_count} memory nodes")
         return processed_count
 
     def get_memory_stats(self) -> Dict[str, Any]:
@@ -212,8 +294,6 @@ class MemoryEngine(IMemoryEngine):
                 "memory_types": {},
                 "total_tags": 0,
                 "total_links": 0,
-                "version_stats": {},
-                "recall_stats": {},
             }
 
         # Basic stats
@@ -224,13 +304,14 @@ class MemoryEngine(IMemoryEngine):
         # Memory types
         type_counts = {}
         for node in all_nodes:
-            type_counts[node.node_type] = type_counts.get(node.node_type, 0) + 1
-
-        # Tags
+            type_counts[node.node_type] = type_counts.get(node.node_type, 0) + 1        # Tags
         all_tags = set()
         for node in all_nodes:
-            all_tags.update(node.tags)        # Links
-        total_links = sum(len(node.links) for node in all_nodes)
+            if node.tags:  # Check if tags is not None/empty
+                all_tags.update(node.tags)
+
+        # Links
+        total_links = sum(len(node.links) if node.links else 0 for node in all_nodes)
 
         return {
             "total_memories": total_memories,
@@ -277,39 +358,6 @@ class MemoryEngine(IMemoryEngine):
         logger.debug(f"Found {len(related_memories)} related memories for {node_id}")
         return related_memories
 
-    def _extract_tags(self, content: str) -> List[str]:
-        """Simple tag extraction from content."""
-        # This is a basic implementation - could be enhanced with NLP
-        import re
-
-        # Extract words that look like tags (capitalized words, etc.)
-        words = re.findall(r"\b[A-Z][a-z]+\b", content)
-
-        # Also look for hashtag-style tags
-        hashtags = re.findall(r"#(\w+)", content)
-
-        # Combine and limit to reasonable number
-        tags = list(set(words + hashtags))[:10]
-
-        return tags    def _get_next_version(self, original_id: UUID) -> int:
-        """Get the next version number for a memory."""
-        try:
-            chain = self.version_manager.get_version_chain(original_id)
-            if chain:
-                return max(node.version for node in chain) + 1
-            return 2  # If original is version 1, next is 2
-        except Exception:
-            return 2
-
-    def _create_automatic_link(
-        self, from_id: UUID, to_id: UUID, weight: float, link_type: str = "related"
-    ) -> None:
-        """Create a link between memories (internal helper)."""
-        try:
-            self.linker.create_link(from_id, to_id, weight, link_type)
-        except Exception as e:
-            logger.warning(f"Failed to create automatic link {from_id} -> {to_id}: {e}")
-
     def maintenance(self) -> Dict[str, int]:
         """
         Perform maintenance operations on the memory system.
@@ -331,3 +379,75 @@ class MemoryEngine(IMemoryEngine):
             logger.error(f"Maintenance failed: {e}")
 
         return results
+
+    def _extract_tags(self, content: str) -> List[str]:
+        """Simple tag extraction from content."""
+        # This is a basic implementation - could be enhanced with NLP
+
+        # Extract words that look like tags (capitalized words, etc.)
+        words = re.findall(r"\b[A-Z][a-z]+\b", content)
+
+        # Also look for hashtag-style tags
+        hashtags = re.findall(r"#(\w+)", content)
+
+        # Combine and limit to reasonable number
+        tags = list(set(words + hashtags))[:10]
+
+        return tags
+
+    def _get_next_version(self, original_id: UUID) -> int:
+        """Get the next version number for a memory."""
+        try:
+            chain = self.version_manager.get_version_chain(original_id)
+            if chain:
+                return max(node.version for node in chain) + 1
+            return 2  # If original is version 1, next is 2
+        except Exception:
+            return 2
+
+    def _create_automatic_link(
+        self, from_id: UUID, to_id: UUID, weight: float, link_type: str = "related"
+    ) -> None:
+        """Create a link between memories (internal helper)."""
+        try:
+            self.linker.create_link(from_id, to_id, weight, link_type)
+        except Exception as e:
+            logger.warning(f"Failed to create automatic link {from_id} -> {to_id}: {e}")
+
+    def link_memories(
+        self, from_id: UUID, to_id: UUID, weight: float = 0.5, link_type: str = "cross_domain"
+    ) -> bool:
+        """
+        Create a link between two memories.
+
+        Args:
+            from_id: Source memory ID
+            to_id: Target memory ID
+            weight: Link weight (0.0 to 1.0)
+            link_type: Type of link (e.g., "cross_domain", "related", "similar")
+
+        Returns:
+            True if link was created successfully, False otherwise
+        """
+        try:
+            # Validate that both nodes exist
+            from_node = self.storage.read_node_by_id(from_id)
+            to_node = self.storage.read_node_by_id(to_id)
+
+            if not from_node:
+                logger.warning(f"Source node {from_id} not found")
+                return False
+
+            if not to_node:
+                logger.warning(f"Target node {to_id} not found")
+                return False
+
+            # Create the link using the linker
+            self.linker.create_link(from_id, to_id, weight, link_type)
+
+            logger.info(f"Created {link_type} link: {from_id} -> {to_id} (weight={weight})")
+            return True
+
+        except Exception as e:
+            logger.error(f"Failed to create link {from_id} -> {to_id}: {e}")
+            return False

@@ -100,6 +100,22 @@ class MemoryStorage(IMemoryStorage):
         if not os.path.exists(self.data_path):
             return nodes
         
+        # First try reading using the index (faster and more reliable)
+        if self._index_cache:
+            logger.debug(f"Reading {len(self._index_cache)} nodes using index")
+            for node_id, offset in self._index_cache.items():
+                try:
+                    node = self.read_node(offset)
+                    nodes.append(node)
+                except Exception as e:
+                    logger.warning(f"Failed to read indexed node {node_id} at offset {offset}: {e}")
+            
+            if nodes:
+                logger.info(f"Loaded {len(nodes)} nodes from storage using index")
+                return nodes
+        
+        # Fallback: scan the entire file only if index reading failed
+        logger.debug("Index reading failed, scanning entire file for nodes")
         try:
             with open(self.data_path, 'rb') as f:
                 while True:
@@ -109,9 +125,9 @@ class MemoryStorage(IMemoryStorage):
                         node = self.serializer.read_node(f)
                         nodes.append(node)
                         
-                        # Verify index consistency
+                        # Update index if needed
                         if node.id not in self._index_cache:
-                            logger.warning(f"Node {node.id} found in data but not in index")
+                            logger.debug(f"Found unindexed node {node.id} at position {position}")
                             self._index_cache[node.id] = position
                         
                     except EOFError:
@@ -119,16 +135,14 @@ class MemoryStorage(IMemoryStorage):
                         break
                     except Exception as e:
                         logger.error(f"Error reading node at position {position}: {e}")
-                        # Try to skip corrupted data by reading byte by byte
-                        # until we find the next header marker
-                        if not self._seek_to_next_header(f):
-                            break
+                        # Stop on error to prevent infinite loops
+                        break
             
             logger.info(f"Loaded {len(nodes)} nodes from storage")
             
-            # Update index if we found inconsistencies
-            if len(self._index_cache) != len(nodes):
-                logger.info("Rebuilding index from data file")
+            # Update index if we found new nodes
+            if len(nodes) > len(self._index_cache):
+                logger.info("Updating index with newly found nodes")
                 self.index_manager.save_index(self.index_path, self._index_cache)
             
             return nodes
@@ -136,30 +150,6 @@ class MemoryStorage(IMemoryStorage):
         except Exception as e:
             logger.error(f"Failed to read all nodes: {e}")
             return nodes
-    
-    def _seek_to_next_header(self, file) -> bool:
-        """
-        Seek to the next MEX0 header marker.
-        Used for error recovery when reading corrupted data.
-        """
-        header_marker = self.serializer.HEADER_MARKER
-        buffer = b''
-        
-        try:
-            while True:
-                byte = file.read(1)
-                if not byte:  # EOF
-                    return False
-                
-                buffer = (buffer + byte)[-4:]  # Keep last 4 bytes
-                
-                if buffer == header_marker:
-                    # Found header, seek back to start of header
-                    file.seek(file.tell() - 4)
-                    return True
-                    
-        except Exception:
-            return False
     
     def rebuild_index(self) -> None:
         """Rebuild the index by scanning the entire data file."""
@@ -183,8 +173,7 @@ class MemoryStorage(IMemoryStorage):
                         break
                     except Exception as e:
                         logger.error(f"Error during index rebuild at position {position}: {e}")
-                        if not self._seek_to_next_header(f):
-                            break
+                        break
             
             # Save the rebuilt index
             self.index_manager.save_index(self.index_path, self._index_cache)
