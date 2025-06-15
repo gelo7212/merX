@@ -5,40 +5,40 @@
     "nodes_per_second": 0
   },
   "retrieval": {
-    "total_time": 0.02104020118713379,
+    "total_time": 0.012004852294921875,
     "operations": 1000,
-    "nodes_per_second": 47528.06264093644
+    "nodes_per_second": 83299.65046075628
   },
   "content_recall": {
-    "total_time": 16.07449197769165,
+    "total_time": 11.56096863746643,
     "operations": 50,
     "avg_time_ms": 0.0,
-    "avg_results": 150.0
+    "avg_results": 134.0
   },
   "tag_recall": {
-    "total_time": 21.662807941436768,
+    "total_time": 15.195552349090576,
     "operations": 50,
-    "avg_time_ms": 231.51302337646484,
+    "avg_time_ms": 145.51782608032227,
     "avg_results": 500.0
   },
   "spreading_activation": {
-    "total_time": 0.003513813018798828,
+    "total_time": 0.0010020732879638672,
     "operations": 60,
     "avg_time_ms": 0.0,
-    "avg_results": 106.0
+    "avg_results": 107.0
   },
   "memory_usage": {
-    "peak_mb": 460.0078125,
-    "final_mb": 460.0078125
+    "peak_mb": 459.609375,
+    "final_mb": 459.609375
   },
   "storage": {
-    "file_size_mb": 14.655768394470215,
-    "index_size_mb": 2.4927148818969727,
-    "bytes_per_node": 307.35374
+    "file_size_mb": 14.65462589263916,
+    "index_size_mb": 2.4928884506225586,
+    "bytes_per_node": 307.32978
   },
   "concurrent": {
-    "sequential_time": 4.847869157791138,
-    "parallel_time": 7.745342016220093,
-    "speedup": 0.6259076936355885
+    "sequential_time": 2.9705140590667725,
+    "parallel_time": 4.3763673305511475,
+    "speedup": 0.6787625065953214
   }
 }

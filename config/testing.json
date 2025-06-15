@@ -1,0 +1,19 @@
+{
+  "data_path": "data/test_output/hp_mini.mex",
+  "ram_capacity": 500000,
+  "flush_interval": 1.0,
+  "flush_threshold": 10,
+  "log_level": "DEBUG",
+  "log_file": "logs/merx_test.log",
+  "enable_compression": false,
+  "compression_level": 1,
+  "enable_distributed": false,
+  "shard_count": 2,
+  "activation_threshold": 0.1,
+  "spreading_decay": 0.5,
+  "max_hops": 2,
+  "decay_interval": 120,
+  "performance_monitoring": true,
+  "auto_backup": false,
+  "backup_interval": 7200
+}
